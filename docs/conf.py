@@ -30,7 +30,7 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ['alabaster']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -50,7 +50,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Backslash'
-copyright = '2017, Rotem Yaari'
+copyright = '2013-2017, Rotem Yaari'
 author = 'Rotem Yaari'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -120,7 +120,29 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+import alabaster
+
+html_theme_path = [alabaster.get_path()]
+
 html_theme = 'alabaster'
+html_theme_options = {
+    'logo': 'backslash-logo.png',
+    'github_user': 'getslash',
+    'github_repo': 'backslash',
+    'github_button': True,
+    'github_banner': True,
+    'travis_button': 'getslash/backslash',
+    'extra_nav_links': {
+        'Backslash Website': 'http://getslash.github.io/backslash',
+        'Backslash@Github': 'https://github.com/getslash/backslash',
+    }
+}
+html_sidebars = {
+   '**': [
+       'about.html', 'navigation.html', 'searchbox.html', 'donate.html',
+   ]
+}
+
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
